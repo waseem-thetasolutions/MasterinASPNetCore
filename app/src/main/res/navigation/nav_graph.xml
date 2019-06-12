@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/topic_list_dest">
+
+    <fragment android:id="@+id/topic_list_dest" android:name="com.theta.masterinaspnetcore.ui.topic.TopicListFragment"
+              android:label="fragment_topic_list" tools:layout="@layout/fragment_topic_list">
+        <action android:id="@+id/action_topic_list_dest_to_topicDetailFragment"
+                app:destination="@id/topic_detail_dest"/>
+        <argument android:name="lessonId" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+    <fragment android:id="@+id/topic_detail_dest"
+              android:name="com.theta.masterinaspnetcore.ui.topic.TopicDetailFragment"
+              android:label="fragment_topic_detail" tools:layout="@layout/fragment_topic_detail">
+        <argument android:name="topicId" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+    <action android:id="@+id/action_global_topic_list_dest" app:destination="@id/topic_list_dest"/>
+</navigation>
